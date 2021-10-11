@@ -9,7 +9,7 @@ Created on Fri Oct  8 15:29:22 2021
 ## fileparse ejercicio 6.6
 import csv
 
-def parse_csv(nombre_archivo):
+def parse_csv(nombre_archivo, select = None):
     '''
     Parsea un archivo CSV en una lista de registros
     '''
@@ -27,4 +27,35 @@ def parse_csv(nombre_archivo):
     return registros
 camion=parse_csv(r'C:\Users\Alfredo\Bitácoras\Python UNSAM\ejercicios_python\Data\camion.csv')
 print(camion)
+#%%
+precios = open(r'C:\Users\Alfredo\Bitácoras\Python UNSAM\ejercicios_python\Data\precios.csv') 
+csvreader = csv.reader(precios)
+header = []
+header = next(csvreader)
+rows=[]
+for row in csvreader:
+    rows.append(row)   
+precios.close()
+#%%
+f = open(r'C:\Users\Alfredo\Bitácoras\Python UNSAM\ejercicios_python\Data\precios.csv')
+for linea in f:
+    print(linea)
+f.close()
+#%%
+def parse(nombre_archivo,select=None):
+    csvreader = csv.reader(nombre_archivo)
+    header = []
+    header = next(csvreader)
+    rows = []
+    for r,j in enumerate(csvreader):
+        row=(r,j)
+        print (row)
+#%%
+precios = parse_csv(r'C:\Users\Alfredo\Bitácoras\Python UNSAM\ejercicios_python\Data\precios.csv', types=[str,float], has_headers=False)
+
+#%%
+encabezados = ['nombre','dia', 'hora', 'cajones', 'precio']
+select = ['nombre', 'cajones']
+indices = [encabezados.index(nombre_columna) for nombre_columna in select]
+print (indices)
 #%%
