@@ -1,0 +1,11 @@
+### Comparaciones
+
+Las siguientes comparaciones (suelen llamarse *operadores relacionales* ya que expresan una relación entre dos elementos) funcionan con números:
+
+```
+x < y      Menor que
+x <= y     Menor o igual que
+x > y      Mayor que
+x >= y     Mayor o igual que
+x == y     Igual a
+x != y     No igual a
