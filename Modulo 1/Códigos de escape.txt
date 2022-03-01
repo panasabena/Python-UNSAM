@@ -1,0 +1,8 @@
+## Códigos de escape:
+
+'\n'	Avanzar en linea
+'\r'	Retorno de carro
+'\t'	Tabulador
+'\"'	Comilla literal
+'\'	Comilla doble literal
+'\\'	Barra invertida literal
