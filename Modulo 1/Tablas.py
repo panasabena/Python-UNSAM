@@ -20,16 +20,21 @@ while mes < 61:
     saldo = saldo * (1+tasa/12) - pago_mensual
     total_pagado = total_pagado + pago_mensual
     mes = mes + 1
-    print('|',mes,'|',saldo,'|',total_pagado)
+    print('|',mes,'|',saldo,'|',total_pagado,'|')
 while mes >=61 and mes <= 108:
     saldo = saldo * (1+tasa/12) - pago_mensual - adelanto # no entiendo por que aca es 1+tasa/12
     total_pagado = total_pagado + pago_mensual + adelanto
     mes = mes + 1
-    print('|',mes,'|',saldo,'|',total_pagado)
+    print('|',mes,'|',saldo,'|',total_pagado,'|')
 while saldo > 0:
     saldo = saldo * (1+tasa/12) - pago_mensual # no entiendo por que aca es 1+tasa/12
     total_pagado = total_pagado + pago_mensual
     mes = mes + 1
-    print('|',mes,'|',saldo,'|',total_pagado)
+    print('|',mes,'|',saldo,'|',total_pagado,'|')
+    if saldo <= pago_mensual:
+        mes = mes + 1
+        saldo = saldo - saldo
+        total_pagado = total_pagado + saldo
+        print('|',mes,'|',saldo,'|',total_pagado,'|')
 print ('Total pagado', round(total_pagado, 2))
 print ('Cantidad de meses',mes)
